@@ -52,6 +52,15 @@ class TaskController extends Controller
         return to_route('task.index');
     }
 
+    public function create()
+    {
+         $importances = Importance::all();
+         $urgencies = Urgency::all();
+  
+         return view('tasks.create', compact('importances', 'urgencies'));
+    }
+
+
 
     /**
      * Update the specified resource in storage.
